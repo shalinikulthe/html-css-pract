@@ -1,60 +1,138 @@
-nav ul{
+nav ul {
     list-style: none;
     display: flex;
 }
-nav{
+
+nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
     background: linear-gradient(120deg, #3498db, #8e44ad, #3498db);
-    width: 88%;
-    float: right;
-
+    width: 98%; /* Set the width to 100% to make it touch the left edge */
+    position: fixed; /* Fixed position to keep the navbar at the top */
+    top: 0; /* Ensure the navbar touches the top */
+    margin: 0; /* Remove any margin */
+    z-index: 1000; /* Make sure it's above other elements */
 }
+
+
 nav ul li {
     margin: 0 15px;
 }
-nav ul{
+
+nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    
 }
+
 nav ul li a {
     color: white;
     text-decoration: none;
     padding: 8px 16px;
     display: block;
     float: left;
-    
 }
-.sidebar
-{
+
+.sidebar {
     background-image: linear-gradient(120deg, #3498db, #8e44ad);
     height: 100vh;
     width: 10.5%;
+    position: fixed; /* Fixed position to keep the sidebar in place */
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
+
 .sidebar ul li a {
     color: white;
     text-decoration: none;
- display: block;
+    display: block;
     padding-top: 30px;
-    float: left; 
+    float: left;
     padding-left: 20px;
-    
 }
-.sidebar ul{
+
+.sidebar ul {
     list-style: none;
     float: left;
     padding: 1px;
     text-align: center;
-    
-
 }
-.sidebar h4{
+
+.sidebar h4 {
     padding-top: 20px;
     text-align: center;
     color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav form {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+
+    }
+
+    .sidebar ul {
+        float: none;
+        padding: 10px;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 10px;
+    }
+
+    .sidebar h4 {
+        text-align: left;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        display: block;
+    }
+
+    nav ul li a {
+        padding: 10px;
+        display: block;
+        text-align: center;
+    }
+
+    .sidebar ul {
+        text-align: left;
+    }
+
+    .sidebar ul li a {
+        padding: 15px;
+        text-align: left;
+    }
+
+    .sidebar h4 {
+        padding-left: 10px;
+    }
 }
